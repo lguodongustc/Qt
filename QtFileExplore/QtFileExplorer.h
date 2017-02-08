@@ -9,6 +9,7 @@
 #include <QUrl>
 #include <QDirModel>
 #include <QFileDialog>
+
 #include <iostream>
 class QLabel;
 
@@ -27,15 +28,19 @@ public:
 private slots:
     void on_treeView_clicked(const QModelIndex &index);
     void on_listView_clicked(const QModelIndex &index);
+    void on_listView_doubleClicked(const QModelIndex &index);
+
+protected:
+    void dragEnterEvent(QDragEnterEvent* event);
+    void dropEvent(QDropEvent* event);
+    void resizeEvent(QResizeEvent *event);
 
 private:
-    void dragEnterEvent(QDragEnterEvent*event);//拖动进入事件
-    void dropEvent(QDropEvent*event);
-
     Ui::QtFileExplorer *ui;
     QFileSystemModel *dirModel;
     QFileSystemModel *fileModel;
     QLabel *imageLabel;
+    QPixmap *image;
 };
 
 #endif // QTFILEEXPLORER_H
