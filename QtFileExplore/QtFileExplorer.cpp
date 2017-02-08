@@ -6,17 +6,28 @@ QtFileExplorer::QtFileExplorer(QWidget *parent) :
     ui(new Ui::QtFileExplorer)
 {
     ui->setupUi(this);
+    //timer = new QTimer(this);
+    //connect(timer, SIGNAL(timeout()), this, SLOT(on_listView_clicked(const QModelIndex &)));
+
 
     QString rootPath = "/";
     dirModel = new QFileSystemModel(this);
     dirModel->setRootPath(rootPath);
     dirModel->setFilter(QDir::NoDotAndDotDot | QDir::AllDirs);
     ui->treeView->setModel(dirModel);
+    ui->treeView->setHeaderHidden(true);
+    ui->treeView->hideColumn(1);
+    ui->treeView->hideColumn(2);
+    ui->treeView->hideColumn(3);
 
     fileModel = new QFileSystemModel(this);
     fileModel->setRootPath(rootPath);
     fileModel->setFilter(QDir::NoDotAndDotDot | QDir::Dirs | QDir::Files);
     ui->listView->setModel(fileModel);
+    ui->listView->setHeaderHidden(true);
+    ui->listView->hideColumn(1);
+    ui->listView->hideColumn(2);
+    ui->listView->hideColumn(3);
 }
 
 QtFileExplorer::~QtFileExplorer()
@@ -69,7 +80,15 @@ void QtFileExplorer::on_treeView_clicked(const QModelIndex &index)
 
 void QtFileExplorer::on_listView_clicked(const QModelIndex &index)
 {
-
+    /*
+    //isDoubleClicked = false;
+    //timer->stop();
+    QFileIconProvider icon_provider;
+    QFileInfo fileInfo(fileModel->fileInfo(index).absoluteFilePath());
+    std::cout << qPrintable(fileModel->fileInfo(index).absoluteFilePath()) << std::endl;
+    QIcon icon = icon_provider.icon(fileInfo);
+    ui->imageLabel->setPixmap(icon.pixmap(QSize(64, 64)));
+    */
 }
 
 void QtFileExplorer::on_listView_doubleClicked(const QModelIndex &index)

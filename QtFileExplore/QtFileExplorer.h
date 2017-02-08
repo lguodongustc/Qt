@@ -9,6 +9,8 @@
 #include <QUrl>
 #include <QDirModel>
 #include <QFileDialog>
+#include <QFileIconProvider>
+#include <QIcon>
 
 #include <iostream>
 class QLabel;
@@ -41,6 +43,11 @@ private:
     QFileSystemModel *fileModel;
     QLabel *imageLabel;
     QPixmap *image;
+    //QTimer *timer;
+    //bool isDoubleClicked;
+
+    //void signleClicked(const QModelIndex &index);
+    //void doubleClicked(const QModelIndex &index);
 };
 
 #endif // QTFILEEXPLORER_H

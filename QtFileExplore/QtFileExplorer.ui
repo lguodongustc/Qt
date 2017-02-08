@@ -39,8 +39,17 @@
        <property name="sizeAdjustPolicy">
         <enum>QAbstractScrollArea::AdjustIgnored</enum>
        </property>
+       <attribute name="headerVisible">
+        <bool>true</bool>
+       </attribute>
        <attribute name="headerCascadingSectionResizes">
         <bool>false</bool>
+       </attribute>
+       <attribute name="headerShowSortIndicator" stdset="0">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="headerStretchLastSection">
+        <bool>true</bool>
        </attribute>
       </widget>
      </item>
@@ -65,6 +74,12 @@
        <property name="dragEnabled">
         <bool>true</bool>
        </property>
+       <property name="itemsExpandable">
+        <bool>false</bool>
+       </property>
+       <attribute name="headerVisible">
+        <bool>false</bool>
+       </attribute>
        <attribute name="headerCascadingSectionResizes">
         <bool>false</bool>
        </attribute>
