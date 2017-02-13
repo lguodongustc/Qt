@@ -1,11 +1,10 @@
-#ifndef UIIMAGEVIEWERIMP_H
-#define UIIMAGEVIEWERIMP_H
+#pragma once
 
+#include <QFrame>
 
-class UiImageViewerImp
+class UiImageViewerImp : public QFrame
 {
 public:
-    UiImageViewerImp();
+    explicit UiImageViewerImp(QWidget* p_Parent = NULL);
 };
 
-#endif // UIIMAGEVIEWERIMP_H

@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2017-02-13T16:55:07
+# Project created by QtCreator 2017-02-13T18:02:52
 #
 #-------------------------------------------------
 
@@ -24,8 +24,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        UiFinderImp.cpp
+        UiFinderImp.cpp \
+    UiImageViewerImp.cpp
 
-HEADERS  += UiFinderImp.h
+HEADERS  += UiFinderImp.h \
+    UiImageViewerImp.h
 
 FORMS    += UiFinderImp.ui

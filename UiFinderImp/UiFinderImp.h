@@ -1,10 +1,14 @@
-#ifndef UIFINDERIMP_H
-#define UIFINDERIMP_H
+#pragma once
 
 #include <QDialog>
+#include <QPointer>
+#include <QScopedPointer>
 
-namespace Ui {
-class UiFinderImp;
+class QFileSystemModel;
+
+namespace Ui
+{
+    class UiFinderImp;
 }
 
 class UiFinderImp : public QDialog
@@ -12,11 +16,10 @@ class UiFinderImp : public QDialog
     Q_OBJECT
 
 public:
-    explicit UiFinderImp(QWidget *parent = 0);
+    explicit UiFinderImp(QWidget* p_Parent = NULL);
     ~UiFinderImp();
 
 private:
-    Ui::UiFinderImp *ui;
+    QScopedPointer<Ui::UiFinderImp> m_Ui;
+    QPointer<QFileSystemModel> m_FileModel;
 };
-
-#endif // UIFINDERIMP_H

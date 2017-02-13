@@ -64,7 +64,11 @@
     </layout>
    </item>
    <item row="0" column="0">
-    <widget class="QListWidget" name="listWidget"/>
+    <widget class="QListWidget" name="listWidget">
+     <property name="currentRow">
+      <number>-1</number>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>
